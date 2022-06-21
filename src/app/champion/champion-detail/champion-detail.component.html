@@ -1,0 +1,15 @@
+<div class="card-deck offset-5" *ngIf="champion">
+    <div class="row">
+        <div class="card col-6">
+            <!-- <img class="card-img-top" src="..." alt="Card image"> -->
+            <div class="card-body">
+            <h5 class="card-title">{{ champion.name }}</h5>
+            <span class="{{champion.cost | championCostColor }}">{{ champion.cost }}</span>
+            <p *ngFor="let origin of champion.origin" class="card-text">{{ origin }}</p>
+            <p *ngFor="let class of champion.class" class="card-text">{{ class }}</p>
+            <a (click)="goBack()" class="btn bg-danger">Retour</a>
+            </div>
+        </div>
+    </div>
+</div>
+<h2 *ngIf="!champion" class="text-center">Aucun champion à afficher !</h2>

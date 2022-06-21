@@ -1,0 +1,20 @@
+<h2 class="offset-2">Liste des champions</h2>
+<input class="offset-2" type="number" #input (keyup.enter)="selectChampion(input.value)"/>
+
+<!-- <p class="offset-5" *ngIf="championSelected">vous avez sélectionné le Champions {{ championSelected?.name }}</p>
+<p class="offset-5" *ngIf="!championSelected">Aucun Champion ne correspond a cette ID</p> -->
+
+<div class="card-deck">
+    <div class="row">
+        <div class="card col-4 offset-1 mb-4" (click)="goTo(champion)" *ngFor="let champion of ChampionList" champBorderCard="blue">
+            <!-- <img class="card-img-top" src="..." alt="Card image"> -->
+            <div class="card-body">
+            <h5 class="card-title">{{ champion.name }}</h5>
+            <span class="{{champion.cost | championCostColor }}">{{ champion.cost }}</span>
+            <p *ngFor="let origin of champion.origin" class="card-text">{{ origin }}</p>
+            <p *ngFor="let class of champion.class" class="card-text">{{ class }}</p>
+            <!-- PIPES!!!  champion.created | date:"dd/MM/yyyy" | uppercase -->
+            </div>
+        </div>
+    </div>
+</div>

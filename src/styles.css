@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+.chip-grey {
+    background-color: grey;
+}
+.chip-green {
+    background-color: green;
+}
+.chip-blue {
+    background-color: blue;
+}
+.chip-purple {
+    background-color: purple;
+}
+.chip-yellow {
+    background-color: gold;
+}
